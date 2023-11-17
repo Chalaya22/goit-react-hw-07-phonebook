@@ -13,3 +13,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.styledSection {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px #fff;
+  margin: 30px auto;
+  max-width: 600px;
+  min-width: 320px;
+}
+.titlePhone {
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+
+  color: black;
+}
+.titleContact {
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+
+  color: black;
+}

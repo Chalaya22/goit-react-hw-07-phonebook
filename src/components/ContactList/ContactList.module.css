@@ -1,0 +1,11 @@
+.contactList {
+  max-width: 600px;
+  min-width: 280px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+
+  color: black;
+  background-color: white;
+}
