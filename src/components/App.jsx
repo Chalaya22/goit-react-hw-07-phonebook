@@ -18,10 +18,10 @@ export const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (error === 'ERR_BAD_REQUEST') {
-      alert('There are some problems! Try again ...');
-      return;
-    }
+    // if (error === 'ERR_BAD_REQUEST') {
+    //   alert('There are some problems! Try again ...');
+    //   return;
+    // }
     if (error) {
       alert(error);
     }
