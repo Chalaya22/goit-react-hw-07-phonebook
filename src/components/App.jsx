@@ -1,15 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contactOperation';
+import {
+  selectorContacts,
+  selectorIsLoading,
+  selectorError,
+} from 'redux/selectors';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Loader from './LoaderPhone/LoaderPhone';
 import Filter from './Filter';
 
 export const App = () => {
-  const contacts = useSelector(state => state.contacts.contacts);
-  const isLoading = useSelector(state => state.contacts.isLoading);
-  const error = useSelector(state => state.contacts.error);
+  const contacts = useSelector(selectorContacts);
+  const isLoading = useSelector(selectorIsLoading);
+  const error = useSelector(selectorError);
 
   const dispatch = useDispatch();
 
@@ -18,10 +23,6 @@ export const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // if (error === 'ERR_BAD_REQUEST') {
-    //   alert('There are some problems! Try again ...');
-    //   return;
-    // }
     if (error) {
       alert(error);
     }
