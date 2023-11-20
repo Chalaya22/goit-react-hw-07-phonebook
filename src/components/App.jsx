@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { fetchContacts } from 'redux/contactOperation';
 import {
   selectorContacts,
@@ -23,8 +24,12 @@ export const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
+    if (error === 'ERR_BAD_REQUEST') {
+      toast.error('Sorry! There are some problems! Try again later.');
+      return;
+    }
     if (error) {
-      alert(error);
+      toast.error(error);
     }
   }, [error]);
 
