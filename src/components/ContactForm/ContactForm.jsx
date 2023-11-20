@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contactOperation';
 import css from './ContactForm.module.css';
@@ -8,7 +8,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const [name, setName] = useState(' ');
-  const [number, setNumber] = useState(' ');
+  const [phone, setNPhone] = useState(' ');
 
   const handleInputChange = event => {
     const { name, value } = event.currentTarget;
@@ -17,8 +17,8 @@ const ContactForm = () => {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setNPhone(value);
         break;
 
       default:
@@ -27,16 +27,15 @@ const ContactForm = () => {
   };
   const reset = () => {
     setName(' ');
-    setNumber(' ');
+    setNPhone(' ');
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
     const newObject = {
-      id: nanoid(),
       name,
-      number,
+      phone,
     };
     dispatch(addContact(newObject));
     reset();
@@ -62,8 +61,8 @@ const ContactForm = () => {
         <input
           className={css.imputForm}
           type="tel"
-          name="number"
-          value={number}
+          name="phone"
+          value={phone}
           onChange={handleInputChange}
           placeholder="Enter number tel: "
           pattern="\\+?\\d{1,4}?[ .\\-\\s]?\\(?\\d{1,3}?\\)?[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,9}"
