@@ -38,6 +38,7 @@ const ContactForm = () => {
       name,
       number,
     };
+
     dispatch(addContact(newObject));
     reset();
   };
