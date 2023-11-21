@@ -22,12 +22,12 @@ const ContactList = () => {
 
   return (
     <ul className={css.contactList}>
-      {filteredContacts.map(({ id, name, number }) => (
+      {filteredContacts.map(({ id, name, phone }) => (
         <ContactElements
           key={id}
           name={name}
           id={id}
-          number={number}
+          number={phone}
           onDelete={onDelete}
         />
       ))}

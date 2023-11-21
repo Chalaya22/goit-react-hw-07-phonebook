@@ -8,7 +8,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const [name, setName] = useState(' ');
-  const [number, setNumber] = useState(' ');
+  const [phone, setPhone] = useState(' ');
 
   const handleInputChange = event => {
     const { name, value } = event.currentTarget;
@@ -17,8 +17,8 @@ const ContactForm = () => {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setPhone(value);
         break;
 
       default:
@@ -27,7 +27,7 @@ const ContactForm = () => {
   };
   const reset = () => {
     setName(' ');
-    setNumber(' ');
+    setPhone(' ');
   };
 
   const handleSubmit = e => {
@@ -36,7 +36,7 @@ const ContactForm = () => {
     const newObject = {
       id: nanoid(),
       name,
-      number,
+      phone,
     };
 
     dispatch(addContact(newObject));
@@ -63,8 +63,8 @@ const ContactForm = () => {
         <input
           className={css.imputForm}
           type="tel"
-          name="number"
-          value={number}
+          name="phone"
+          value={phone}
           onChange={handleInputChange}
           placeholder="Enter number tel: "
           pattern="\\+?\\d{1,4}?[ .\\-\\s]?\\(?\\d{1,3}?\\)?[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,9}"

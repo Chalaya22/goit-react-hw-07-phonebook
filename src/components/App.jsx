@@ -35,6 +35,7 @@ export const App = () => {
 
   return (
     <section className="styledSection">
+      {error !== null && <p> Ooops... {error}</p>}
       {isLoading && <Loader />}
       <h1 className="titlePhone">Phonebook ❤️</h1>
       <ContactForm />
